@@ -4,21 +4,21 @@
     <test name="Test on [Chrome]">
         <parameter name="selenium.browser" value="chrome" />
         <classes>
-            <class name="com.ksergie.LoginTest" />
+            <class name="com.ksergie.LoginPageTests" />
         </classes>
     </test>
 
     <test name="Test on [Firefox]">
         <parameter name="selenium.browser" value="firefox" />
         <classes>
-            <class name="com.ksergie.LoginTest" />
+            <class name="com.ksergie.LoginPageTests" />
         </classes>
     </test>
     
     <test name="Test on [Edge]">
         <parameter name="selenium.browser" value="edge" />
         <classes>
-            <class name="com.ksergie.LoginTest" />
+            <class name="com.ksergie.LoginPageTests" />
         </classes>
     </test>
 </suite>

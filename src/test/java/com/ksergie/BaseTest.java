@@ -17,24 +17,28 @@ public class BaseTest {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
+    static final String firefox = "firefox";
+    static final String chrome = "chrome";
+    static final String edge = "edge";
+
 
     private WebDriver getDriver(String browser){
         switch(browser){
-            case "firefox":
-                System.setProperty("webdriver.gecko.driver"), new File(BaseTest.class.getResource("/geckodriver.exe").getFile()).getPath();
+            case firefox:
+                System.setProperty("webdriver.gecko.driver", new File(BaseTest.class.getResource("/geckodriver.exe").getFile()).getPath());
 //                FirefoxOptions options = new FirefoxOptions();
 //                options.addArguments();
 //                options.setCapability();
                 return new FirefoxDriver();
-            case "chrome":
-                System.setProperty("webdriver.chrome.driver"), new File(BaseTest.class.getResource("/chromedriver.exe").getFile()).getPath();
+            case chrome:
+                System.setProperty("webdriver.chrome.driver", new File(BaseTest.class.getResource("/chromedriver.exe").getFile()).getPath());
                 return new ChromeDriver();
 //            case "ie":
 //            case "internet explorer":
-//                System.setProperty("webdriver.ie.driver"), new File(com.ksergie.BaseTest.class.getResource("/IEDriverServer.exe").getFile()).getPath();
-            case "edge":
+//                System.setProperty("webdriver.ie.driver", new File(com.ksergie.BaseTest.class.getResource("/IEDriverServer.exe").getFile()).getPath());
+            case edge:
             default:
-                System.setProperty("webdriver.edge.driver"), new File(BaseTest.class.getResource("/MicrosoftWebDriver.exe").getFile()).getPath();
+                System.setProperty("webdriver.edge.driver", new File(BaseTest.class.getResource("/MicrosoftWebDriver.exe").getFile()).getPath());
                 return new EdgeDriver();
         }
     }
