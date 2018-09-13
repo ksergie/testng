@@ -16,7 +16,7 @@ public class LoginPageTests extends BaseTest {
 
     @Test(dataProvider = "getLoginData")
     public void testLogin(String userName, String userPasswd){
-        loginPage = new LoginPage(driver);
+        loginPage = new LoginPage(eventDriver);
         loginPage.login(userName, userPasswd);
     }
 }

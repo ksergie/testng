@@ -2,13 +2,14 @@ package com.ksergie;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.Assert;
 
 public class LoginPage {
 
-    private WebDriver driver;
+    private EventFiringWebDriver driver;
 
-    public LoginPage(WebDriver driver) {
+    public LoginPage(EventFiringWebDriver driver) {
         this.driver = driver;
     }
 
