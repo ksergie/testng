@@ -1,13 +1,18 @@
 package com.ksergie;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.Assert;
 
+import java.util.Properties;
+
 public class LoginPage {
 
     private EventFiringWebDriver driver;
+    private static final Logger log = LogManager.getLogger(LoginPage.class.getName());
 
     public LoginPage(EventFiringWebDriver driver) {
         this.driver = driver;
@@ -23,6 +28,7 @@ public class LoginPage {
 
     public void login(String userName, String userPasswd){
         driver.get(BaseUrl);
+        log.info("Open the " + BaseUrl);
         driver.findElement(linkLogin).click();
         driver.findElement(fieldLogin).sendKeys(userName);
         driver.findElement(fieldPassword).sendKeys(userPasswd);
